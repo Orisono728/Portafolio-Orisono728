@@ -32,6 +32,6 @@ Registro público de proyectos y progreso técnico.
 
 ## Autor
 
-**Orisono728** · [`dbarrientos-dev`](https://github.com/Orisono728)
+**Orisono728** · [`Orisono728`](https://github.com/Orisono728)
 Estudiante de Ingeniería de Sistemas y Computación · Universidad del Quindío
 Armenia, Quindío, Colombia 🇨🇴
