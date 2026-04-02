@@ -1,0 +1,354 @@
+/* ═══════════════════════════════════════
+   FUENTES LOCALES — Montserrat
+   Cargadas desde ./fonts/ en cinco pesos.
+   Usarlas con font-family: 'Montserrat'
+   y el font-weight correspondiente.
+═══════════════════════════════════════ */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-Black.ttf) format("truetype");
+  font-weight: 900;
+}
+
+/* ═══════════════════════════════════════
+   VARIABLES GLOBALES (custom properties)
+   Paleta oscura con acentos dorados.
+   Modificar aquí para cambiar el tema
+   en toda la página de una sola vez.
+═══════════════════════════════════════ */
+
+:root {
+  /* Fondos */
+  --negro: #0a0a0a; /* fondo base del body */
+  --superficie: #111111; /* fondo de inputs y zonas elevadas */
+  --tarjeta: #1a1a1a; /* fondo de .card */
+  --code-bg: #1e1e1e; /* fondo de bloques de código */
+
+  /* Bordes */
+  --borde: #2a2a2a;
+
+  /* Acento dorado */
+  --oro: #c9a227; /* dorado principal (headings, links) */
+  --oro-claro: #e8c050; /* dorado más brillante (hover, h3, code) */
+  --oro-opaco: #c9a22740; /* dorado con 25 % de opacidad */
+
+  /* Texto */
+  --texto: #e8e8e8; /* texto principal */
+  --texto-suave: #888888; /* texto secundario, metadatos */
+}
+
+/* ═══════════════════════════════════════
+   RESET + BASE
+   Elimina márgenes y paddings del navegador.
+   box-sizing: border-box hace que padding y
+   border no ensanchen el elemento.
+═══════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--negro);
+  color: var(--texto);
+  font-family: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════
+   LAYOUT — CONTENEDOR CENTRAL
+   Centra el contenido con max-width
+   y padding lateral para móviles.
+═══════════════════════════════════════ */
+
+.contenedor {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ═══════════════════════════════════════
+   TIPOGRAFÍA
+═══════════════════════════════════════ */
+
+/* Headings — h1, h2, h3 comparten base */
+h1,
+h2,
+h3 {
+  color: var(--oro);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center; /* el username va centrado */
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--borde); /* separador visual bajo cada sección */
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--oro-claro); /* un tono más claro para distinguir del h2 */
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+small {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* Citas en bloque */
+blockquote {
+  border-left: 3px solid var(--oro);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--texto-suave);
+  font-style: italic;
+}
+
+blockquote footer {
+  margin-top: 0.4rem;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--oro-claro);
+}
+
+/* Listas */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* Definition list (dl) — formación académica */
+dl {
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--oro-claro);
+  margin-top: 0.75rem;
+}
+
+dd {
+  margin-left: 1.2rem;
+  color: var(--texto-suave);
+}
+
+/* Divisor horizontal */
+hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: 2rem 0;
+}
+
+/* ═══════════════════════════════════════
+   ENLACES
+═══════════════════════════════════════ */
+
+a {
+  color: var(--oro);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--oro-claro);
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════
+   TARJETA — .card
+   Componente reutilizable para agrupar
+   contenido con fondo y borde visibles.
+═══════════════════════════════════════ */
+
+.card {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* ═══════════════════════════════════════
+   FORMULARIO — INPUTS
+   Estilos coherentes con el tema oscuro.
+═══════════════════════════════════════ */
+
+input {
+  display: block; /* cada input en su propia línea */
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--borde);
+  background: var(--superficie);
+  color: var(--texto);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--oro); /* resalta el campo activo */
+}
+
+input[type="submit"] {
+  width: auto;
+  background: var(--oro);
+  color: var(--negro);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  margin-top: 0.75rem;
+}
+
+input[type="submit"]:hover {
+  background: var(--oro-claro);
+}
+
+/* ═══════════════════════════════════════
+   CÓDIGO — inline y bloques
+═══════════════════════════════════════ */
+
+/* Código inline: `texto` */
+code {
+  background-color: var(--code-bg);
+  color: var(--oro-claro);
+  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-size: 0.88rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--borde);
+}
+
+/* Bloque de código: <pre><code> */
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  overflow-x: auto; /* scroll horizontal si el contenido desborda */
+  margin: 1rem 0;
+  text-align: left; /* siempre alineado a la izquierda */
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* Dentro de <pre>, el <code> hereda el fondo — sin doble estilo */
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--texto);
+}
+
+/* ═══════════════════════════════════════
+   TABLAS
+═══════════════════════════════════════ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+th {
+  background: var(--tarjeta);
+  color: var(--oro);
+  font-weight: 700;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+}
+
+td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: top;
+}
+
+/* Fila hover sutil */
+tbody tr:hover {
+  background: var(--tarjeta);
+}
+
+tfoot td {
+  padding-top: 0.75rem;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* ═══════════════════════════════════════
+   IMÁGENES
+═══════════════════════════════════════ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Imagen centrada (portada) */
+.centrada {
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
